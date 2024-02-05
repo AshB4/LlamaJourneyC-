@@ -1,0 +1,33 @@
+﻿@inherits LayoutComponentBase
+
+<MudNavMenu>
+    <MudNavGroup Title="Hello!" Expanded="true">
+        <MudNavLink Href="/" Match="NavLinkMatch.Prefix">
+            <span class="oi oi-home" aria-hidden="true"></span> Llama's
+        </MudNavLink>
+        <MudNavLink Href="/home" Match="NavLinkMatch.Prefix">
+            <span class="oi oi-home" aria-hidden="true"></span> Home
+        </MudNavLink>
+        <MudNavLink Href="/Interview" Match="NavLinkMatch.Prefix">
+            <span class="oi oi-briefcase" aria-hidden="true"></span> Interview
+        </MudNavLink>
+
+        <MudNavLink Href="/amortization" Match="NavLinkMatch.Prefix">
+            <span class="oi oi-calculator" aria-hidden="true"></span>Amortization
+        </MudNavLink>
+
+    </MudNavGroup>
+    <MudNavLink Href="/about" Match="NavLinkMatch.Prefix">About</MudNavLink>
+</MudNavMenu>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
+

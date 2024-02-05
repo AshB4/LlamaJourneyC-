@@ -1,0 +1,56 @@
+﻿using System.Globalization;
+using System.Reflection.Metadata.Ecma335;
+using Financr.Utils;
+using Microsoft.AspNetCore.Components;
+using MudBlazor;
+
+namespace Financr.Utils
+{
+    public class SavingsGrapher
+    {
+        public SavingsCalculator SavingsCalculator { get; protected set; }
+
+        public SavingsGrapher(SavingsCalculator savingsCalculator)
+        {
+            SavingsCalculator = savingsCalculator;
+        }
+
+        public List<ChartSeries> Series => new List<ChartSeries>()
+        {
+            new ChartSeries() { Name = "Deposits", Data = this.BuildDepositsSeries() },
+            new ChartSeries() { Name = "Pot", Data = this.BuildDebtSeries() },
+        };
+
+        public List<ChartSeries> PlotlySeries => new List<ChartSeries>()
+        {
+            new ChartSeries() { Name = "Deposits", Data = this.BuildDepositsSeries() },
+            new ChartSeries() { Name = "Pot", Data = this.BuildDebtSeries() },
+        };
+
+
+        public string[] XAxisLabels => this.BuildXAxisLabels();
+
+        public ChartOptions Options => new ChartOptions()
+        {
+            YAxisTicks = 500,
+            MaxNumYAxisTicks = 10,
+            YAxisLines = true,
+            XAxisLines = true
+        };
+
+        private double[] BuildDepositsSeries()
+        {
+            return Array.ConvertAll(this.SavingsCalculator.Deposits.ToArray(), x => (double)x);
+        }
+
+        private double[] BuildDebtSeries()
+        {
+            return Array.ConvertAll(this.SavingsCalculator.Pot.ToArray(), x => (double)x);
+        }
+
+        private string[] BuildXAxisLabels()
+        {
+            return Enumerable.Range(1, this.SavingsCalculator.TotalMonths).Select(x => x.ToString()).ToArray();
+        }
+    }
+}
