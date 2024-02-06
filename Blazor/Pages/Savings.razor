@@ -11,16 +11,16 @@
         
         <MudGrid>
             <MudItem xs=6 md=3>
-                <MudNumericField Label="Starting Balance" Min="0" Step="500" Format="N2" Culture="@enGb" T="decimal" @bind-Value="SavingsCalc.StartingBalance" HelperText="@SavingsCalc.StartingBalance.ToString()" />
+                <MudNumericField Label="Starting Balance" Min="0" Step="500" Format="N2" Culture="@enUS" T="decimal" @bind-Value="SavingsCalc.StartingBalance" HelperText="@SavingsCalc.StartingBalance.ToString()" />
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudNumericField Label="Annual Return" Min="0" Step="0.01m" Format="N2" Culture="@enGb" T="decimal" @bind-Value="SavingsCalc.ExpectedAnnualReturn" />
+                <MudNumericField Label="Annual Return" Min="0" Step="0.01m" Format="N2" Culture="@enUS" T="decimal" @bind-Value="SavingsCalc.ExpectedAnnualReturn" />
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudNumericField Label="Monthly Deposit" Min="0" Step="10" Format="N2" Culture="@enGb" T="decimal" @bind-Value="SavingsCalc.ExpectedMonthlyDeposit" HelperText="@SavingsCalc.ExpectedMonthlyDeposit.ToString()" />
+                <MudNumericField Label="Monthly Deposit" Min="0" Step="10" Format="N2" Culture="@enUS" T="decimal" @bind-Value="SavingsCalc.ExpectedMonthlyDeposit" HelperText="@SavingsCalc.ExpectedMonthlyDeposit.ToString()" />
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudNumericField Label="Deposit Increase" Min="0" Step="0.01m" Format="N2" Culture="@enGb" T="decimal" @bind-Value="SavingsCalc.ExpectedMonthlyDepositIncrease" />
+                <MudNumericField Label="Deposit Increase" Min="0" Step="0.01m" Format="N2" Culture="@enUS" T="decimal" @bind-Value="SavingsCalc.ExpectedMonthlyDepositIncrease" />
             </MudItem>
         </MudGrid>
         <MudGrid>
@@ -43,13 +43,13 @@
     <MudCardContent>
         <MudGrid>
             <MudItem xs=6 md=3>
-                <MudField Class="ma-1" Label="Expected Total" Variant="Variant.Filled">£@SavingsCalc.Pot.Last().BankerRound()</MudField>
+                <MudField Class="ma-1" Label="Expected Total" Variant="Variant.Filled">$@SavingsCalc.Pot.Last().BankerRound()</MudField>
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudField Class="ma-1" Label="Amount Deposited" Variant="Variant.Filled">£@(SavingsCalc.Deposits.Last().BankerRound())</MudField>
+                <MudField Class="ma-1" Label="Amount Deposited" Variant="Variant.Filled">$@(SavingsCalc.Deposits.Last().BankerRound())</MudField>
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudField Class="ma-1" Label="Yield" Variant="Variant.Filled">£@((SavingsCalc.Pot.Last() - SavingsCalc.Deposits.Last()).BankerRound())</MudField>
+                <MudField Class="ma-1" Label="Yield" Variant="Variant.Filled">$@((SavingsCalc.Pot.Last() - SavingsCalc.Deposits.Last()).BankerRound())</MudField>
             </MudItem>
         </MudGrid>
     </MudCardContent>
@@ -72,7 +72,7 @@
 </MudCard>
 
 @code {
-    public CultureInfo enGb = CultureInfo.GetCultureInfo("en-GB");
+    public CultureInfo enUS = CultureInfo.GetCultureInfo("en-US");
 
     protected void Setup()
     {

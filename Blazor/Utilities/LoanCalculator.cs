@@ -14,7 +14,7 @@ namespace Financr.Utils
         public decimal MonthlyInterestRate => this.PercentageRate / 12;
         public int Years { get; set; }
         public int Months => this.Years * 12;
-        public decimal Lbtt => IsMortgage ? CalculateLbtt() : 0;
+        public decimal Ptt => IsMortgage ? CalculatePtt() : 0;
         public decimal Total => this.CalculateTotal();
         public AmortizationSchedule AmortizationSchedule => this.CalculateAmortization();
         public decimal MonthlyPayment => this.MonthlyMortgagePayments();
@@ -68,12 +68,12 @@ namespace Financr.Utils
                 return total;
             }
 
-            total = this.PurchasePrice + this.Lbtt;
+            total = this.PurchasePrice + this.Ptt;
 
             return total;
         }
 
-        private decimal CalculateLbtt()
+        private decimal CalculatePtt()
         {
             var lbbt = 0m;
             if (this.PurchasePrice > 145000)

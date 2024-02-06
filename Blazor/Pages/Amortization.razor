@@ -44,21 +44,21 @@
         </MudGrid>
         <MudGrid>
             <MudItem xs=6 md=3>
-                <MudField Class="ma-1" Label="Lbtt" Variant="Variant.Filled">£@LoanCalc.Lbtt</MudField>
+                <MudField Class="ma-1" Label="Ptt" Variant="Variant.Filled">$@LoanCalc.Ptt</MudField>
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudField Class="ma-1" Label="Total price" Variant="Variant.Filled">£@LoanCalc.Total</MudField>
+                <MudField Class="ma-1" Label="Total price" Variant="Variant.Filled">$@LoanCalc.Total</MudField>
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudField Class="ma-1" Label="Finance required" Variant="Variant.Filled">£@(LoanCalc.MortgageAmount)</MudField>
+                <MudField Class="ma-1" Label="Finance required" Variant="Variant.Filled">$@(LoanCalc.MortgageAmount)</MudField>
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudField Class="ma-1" Label="Payments" Variant="Variant.Filled">£@string.Format("{0:0.00}", LoanCalc.MonthlyPayment) p/m</MudField>
+                <MudField Class="ma-1" Label="Payments" Variant="Variant.Filled">$@string.Format("{0:0.00}", LoanCalc.MonthlyPayment) p/m</MudField>
             </MudItem>
         </MudGrid>
         <MudGrid>
             <MudItem xs=12 sm=6>
-                <MudField Class="ma-1" Label="Cash required" Variant="Variant.Filled">£@(LoanCalc.Lbtt + LoanCalc.Deposit) (£@LoanCalc.Deposit + £@(LoanCalc.Lbtt))</MudField>
+                <MudField Class="ma-1" Label="Cash required" Variant="Variant.Filled">$@(LoanCalc.Ptt + LoanCalc.Deposit) ($@LoanCalc.Deposit + $@(LoanCalc.Ptt))</MudField>
             </MudItem>
         </MudGrid>
     </MudCardContent>

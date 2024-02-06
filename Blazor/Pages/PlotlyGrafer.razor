@@ -20,13 +20,13 @@
         </MudGrid>
         <MudGrid>
             <MudItem xs=6 md=3>
-                <MudNumericField Label="Purchase Price" Min="0" Step="1000" Format="N2" Culture="@enGb" T="decimal" @bind-Value="LoanCalc.PurchasePrice" HelperText="@LoanCalc.PurchasePrice.ToString()" />
+                <MudNumericField Label="Purchase Price" Min="0" Step="1000" Format="N2" Culture="@enUs" T="decimal" @bind-Value="LoanCalc.PurchasePrice" HelperText="@LoanCalc.PurchasePrice.ToString()" />
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudNumericField Label="Deposit" Min="0" Step="1000" Format="N2" Culture="@enGb" T="decimal" @bind-Value="LoanCalc.Deposit" HelperText="@LoanCalc.Deposit.ToString()" />
+                <MudNumericField Label="Deposit" Min="0" Step="1000" Format="N2" Culture="@enUs" T="decimal" @bind-Value="LoanCalc.Deposit" HelperText="@LoanCalc.Deposit.ToString()" />
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudNumericField Label="Rate" Min="0" Step="0.01m" Format="N2" Culture="@enGb" T="decimal" @bind-Value="LoanCalc.InterestRate" />
+                <MudNumericField Label="Rate" Min="0" Step="0.01m" Format="N2" Culture="@enUs" T="decimal" @bind-Value="LoanCalc.InterestRate" />
             </MudItem>
             <MudItem xs=6 md=3>
                 <MudNumericField Label="Years" Min="1" Step="1" Max="50" @bind-Value="LoanCalc.Years" />
@@ -43,13 +43,13 @@
                         </MudGrid>
                         <MudGrid>
                             <MudItem xs=6 md=3>
-                                <MudNumericField Label="Purchase Price" Min="0" Step="1000" Format="N2" Culture="@enGb" T="decimal" @bind-Value="LoanCalc.PurchasePrice" HelperText="@LoanCalc.PurchasePrice.ToString()" />
+                                <MudNumericField Label="Purchase Price" Min="0" Step="1000" Format="N2" Culture="@enUs" T="decimal" @bind-Value="LoanCalc.PurchasePrice" HelperText="@LoanCalc.PurchasePrice.ToString()" />
                             </MudItem>
                             <MudItem xs=6 md=3>
-                                <MudNumericField Label="Deposit" Min="0" Step="1000" Format="N2" Culture="@enGb" T="decimal" @bind-Value="LoanCalc.Deposit" HelperText="@LoanCalc.Deposit.ToString()" />
+                                <MudNumericField Label="Deposit" Min="0" Step="1000" Format="N2" Culture="@enUs" T="decimal" @bind-Value="LoanCalc.Deposit" HelperText="@LoanCalc.Deposit.ToString()" />
                             </MudItem>
                             <MudItem xs=6 md=3>
-                                <MudNumericField Label="Rate" Min="0" Step="0.01m" Format="N2" Culture="@enGb" T="decimal" @bind-Value="LoanCalc.InterestRate" />
+                                <MudNumericField Label="Rate" Min="0" Step="0.01m" Format="N2" Culture="@enUs" T="decimal" @bind-Value="LoanCalc.InterestRate" />
                             </MudItem>
                             <MudItem xs=6 md=3>
                                 <MudNumericField Label="Years" Min="1" Step="1" Max="50" @bind-Value="LoanCalc.Years" />
@@ -75,21 +75,21 @@
         </MudGrid>
         <MudGrid>
             <MudItem xs=6 md=3>
-                <MudField Class="ma-1" Label="LBTT" Variant="Variant.Filled">£@LoanCalc.Lbtt</MudField>
+                <MudField Class="ma-1" Label="Property Tansfer Tax" Variant="Variant.Filled">$@LoanCalc.Ptt</MudField>
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudField Class="ma-1" Label="Total price" Variant="Variant.Filled">£@LoanCalc.Total</MudField>
+                <MudField Class="ma-1" Label="Total price" Variant="Variant.Filled">$@LoanCalc.Total</MudField>
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudField Class="ma-1" Label="Finance required" Variant="Variant.Filled">£@(LoanCalc.MortgageAmount)</MudField>
+                <MudField Class="ma-1" Label="Finance required" Variant="Variant.Filled">$@(LoanCalc.MortgageAmount)</MudField>
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudField Class="ma-1" Label="Payments" Variant="Variant.Filled">£@string.Format("{0:0.00}", LoanCalc.MonthlyPayment) p/m</MudField>
+                <MudField Class="ma-1" Label="Payments" Variant="Variant.Filled">$@string.Format("{0:0.00}", LoanCalc.MonthlyPayment) p/m</MudField>
             </MudItem>
         </MudGrid>
         <MudGrid>
             <MudItem xs=12 sm=6>
-                <MudField Class="ma-1" Label="Cash required" Variant="Variant.Filled">£@(LoanCalc.Lbtt + LoanCalc.Deposit) (£@LoanCalc.Deposit + £@(LoanCalc.Lbtt))</MudField>
+                <MudField Class="ma-1" Label="Cash required" Variant="Variant.Filled">$@(LoanCalc.Ptt + LoanCalc.Deposit) ($@LoanCalc.Deposit + $LoanCalc.Ptt)</MudField>
             </MudItem>
         </MudGrid>
     </MudCardContent>
@@ -132,7 +132,7 @@
 </MudTable>
 
 @code {
-    public CultureInfo enGb = CultureInfo.GetCultureInfo("en-GB");
+    public CultureInfo enUs = CultureInfo.GetCultureInfo("en-US");
 
     protected void SampleLoan()
     {

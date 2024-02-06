@@ -12,8 +12,8 @@ namespace Financr.Utils
 
         public static string FormatDecimal(decimal toFormat)
         {
-            CultureInfo ci = new CultureInfo("en-GB");
-            ci.NumberFormat.CurrencySymbol = "£";
+            CultureInfo ci = new CultureInfo("en-US");
+            ci.NumberFormat.CurrencySymbol = "$";
 
             var rounded = decimal.Round(toFormat, 2, MidpointRounding.AwayFromZero);
             return rounded.ToString("C", ci);
