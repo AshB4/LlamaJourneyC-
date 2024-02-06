@@ -11,16 +11,16 @@
         
         <MudGrid>
             <MudItem xs=6 md=3>
-                <MudNumericField Label="Starting Balance" Min="0" Step="500" Format="N2" Culture="@enUS" T="decimal" @bind-Value="SavingsCalc.StartingBalance" HelperText="@SavingsCalc.StartingBalance.ToString()" />
+                <MudNumericField Label="Starting Balance" Min="0" Step="500" Format="N2" T="decimal" @bind-Value="SavingsCalc.StartingBalance" HelperText="@SavingsCalc.StartingBalance.ToString()" />
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudNumericField Label="Annual Return" Min="0" Step="0.01m" Format="N2" Culture="@enUS" T="decimal" @bind-Value="SavingsCalc.ExpectedAnnualReturn" />
+                <MudNumericField Label="Annual Return" Min="0" Step="0.01m" Format="N2" T="decimal" @bind-Value="SavingsCalc.ExpectedAnnualReturn" />
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudNumericField Label="Monthly Deposit" Min="0" Step="10" Format="N2" Culture="@enUS" T="decimal" @bind-Value="SavingsCalc.ExpectedMonthlyDeposit" HelperText="@SavingsCalc.ExpectedMonthlyDeposit.ToString()" />
+                <MudNumericField Label="Monthly Deposit" Min="0" Step="10" Format="N2"  T="decimal" @bind-Value="SavingsCalc.ExpectedMonthlyDeposit" HelperText="@SavingsCalc.ExpectedMonthlyDeposit.ToString()" />
             </MudItem>
             <MudItem xs=6 md=3>
-                <MudNumericField Label="Deposit Increase" Min="0" Step="0.01m" Format="N2" Culture="@enUS" T="decimal" @bind-Value="SavingsCalc.ExpectedMonthlyDepositIncrease" />
+                <MudNumericField Label="Deposit Increase" Min="0" Step="0.01m" Format="N2"  T="decimal" @bind-Value="SavingsCalc.ExpectedMonthlyDepositIncrease" />
             </MudItem>
         </MudGrid>
         <MudGrid>

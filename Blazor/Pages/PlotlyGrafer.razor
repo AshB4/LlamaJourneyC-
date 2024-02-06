@@ -43,13 +43,13 @@
                         </MudGrid>
                         <MudGrid>
                             <MudItem xs=6 md=3>
-                                <MudNumericField Label="Purchase Price" Min="0" Step="1000" Format="N2" Culture="@enUs" T="decimal" @bind-Value="LoanCalc.PurchasePrice" HelperText="@LoanCalc.PurchasePrice.ToString()" />
+                                <MudNumericField Label="Purchase Price" Min="0" Step="1000" Format="N2" T="decimal" @bind-Value="LoanCalc.PurchasePrice" HelperText="@LoanCalc.PurchasePrice.ToString()" />
                             </MudItem>
                             <MudItem xs=6 md=3>
-                                <MudNumericField Label="Deposit" Min="0" Step="1000" Format="N2" Culture="@enUs" T="decimal" @bind-Value="LoanCalc.Deposit" HelperText="@LoanCalc.Deposit.ToString()" />
+                                <MudNumericField Label="Deposit" Min="0" Step="1000" Format="N2" T="decimal" @bind-Value="LoanCalc.Deposit" HelperText="@LoanCalc.Deposit.ToString()" />
                             </MudItem>
                             <MudItem xs=6 md=3>
-                                <MudNumericField Label="Rate" Min="0" Step="0.01m" Format="N2" Culture="@enUs" T="decimal" @bind-Value="LoanCalc.InterestRate" />
+                                <MudNumericField Label="Rate" Min="0" Step="0.01m" Format="N2" T="decimal" @bind-Value="LoanCalc.InterestRate" />
                             </MudItem>
                             <MudItem xs=6 md=3>
                                 <MudNumericField Label="Years" Min="1" Step="1" Max="50" @bind-Value="LoanCalc.Years" />

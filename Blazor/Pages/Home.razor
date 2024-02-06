@@ -4,7 +4,7 @@
 <MudElement />
 <div style="margin-top: 60px; background-color: white;">
     <MudCarousel
-                 Style="height:600px"
+                 Style="height:500px"
                  ShowArrows="@arrows"
                  ShowBullets="@bullets"
                  EnableSwipeGesture="@enableSwipeGesture"
@@ -15,23 +15,22 @@
                  BulletsColor="Color.Primary">
             
         <MudCarouselItem Transition="transition">
-
-            <MudImage Src="Images/rusticStudio.jpg"
-                      Alt="Colorful Rustic Industrail Studio"
-                      Elevation="5"
-                       />
-
+            <div class="d-flex justify-content-center align-items-center" style="height: 80%;">
+                <MudImage Src="Images/rusticStudio.jpg"
+                          Alt="Colorful Rustic Industrail Studio"
+                          Elevation="5" />
+                </div>
 
         </MudCarouselItem>
 
         <MudCarouselItem Transition="transition">
-            <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+            <div class="d-flex justify-content-center align-items-center" style="height: 80%;">
                 <MudImage Src="/images/rusticStudio2.jpg" />
 
             </div>
         </MudCarouselItem>
         <MudCarouselItem Transition="transition">
-            <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+            <div class="d-flex justify-content-center align-items-center" style="height: 80%;">
                 <MudImage Src="/images/rusticStudio3.jpg" />
 
                 <MudIcon Class="mx-auto my-auto " Size="@Size.Medium" Color="Color.Primary" />
@@ -39,13 +38,13 @@
         </MudCarouselItem>
     </MudCarousel>
     <div>
-        <h2 style="margin-top: 20px; text-align: center;"> Behold the beauty of AI-generated artistry. </h2>
-        <h4 style="text-align:center ">Here, our AI brushes off its digital monocle and ties its virtual bowtie to create a masterpiece of questions that dance between whimsy and wisdom. As you navigate through this artistic journey, let the strokes of curiosity and the splatters of knowledge blend seamlessly in this canvas of conversation.</h4>
-        </div>
+        <h2 style="margin-top: 20px; text-align: center;"> Behold the beautiful dream home of our Llama's'. </h2>
+        <h4 style="text-align:center ">A studio dance between whimsy and a modern industry ascetic .</h4>
+    </div>
 </div>
 
 @code {
-    ObjectFit ImageFit = ObjectFit.Cover;
+    ObjectFit ImageFit = ObjectFit.Fill;
 
     void SetImageFit(ObjectFit value)
     {
