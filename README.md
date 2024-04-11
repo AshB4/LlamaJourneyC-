@@ -6,9 +6,7 @@ Features:
 
 ASP.NET MVC: The backend of the application is built using ASP.NET MVC, providing robust server-side functionality and easy integration with front-end components.
 C#: C# is used for server-side programming, including handling user requests, interacting with the database, and implementing business logic.
-HTML & CSS: The front-end interface is built using HTML for structure and CSS for styling, ensuring a clean and intuitive user experience.
-JavaScript & jQuery: JavaScript and jQuery are used to add interactivity to the application, such as dynamic form validation and map functionality.
-SQL Server: Data is stored and managed using SQL Server, providing a reliable and scalable database solution.
+HTML & CSS: The front-end interface is built using HTML for structure and CSS for styling, ensuring a clean and intuitive user experience
 Getting Started
 To run the Llama House Buying Journey web application locally, follow these steps:
 
